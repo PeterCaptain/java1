@@ -7,7 +7,7 @@ public class Astronomy {
     private static final double JUPITER_RADIUS = 71_492;
 
     public static Double sphereSquare(Double r) {
-        return 4 * PI * Math.pow(r, 2);
+        return 4 * PI * (r * r);
     }
 
     public static Double earthSquare() {
