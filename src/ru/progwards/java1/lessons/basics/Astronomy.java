@@ -1,22 +1,25 @@
 package ru.progwards.java1.lessons.basics;
 
 public class Astronomy {
- private static final double PI = 3.14;
+    private static final double PI = 3.14;
+    private static final double EARTH_RADIUS = 6_371.2;
+    private static final double MERCURY_RADIUS = 2_439.7;
+    private static final double JUPITER_RADIUS = 71_492;
 
     public static Double sphereSquare(Double r) {
         return 4 * PI * Math.pow(r, 2);
     }
 
     public static Double earthSquare() {
-       return sphereSquare(6_371.2);
+       return sphereSquare(EARTH_RADIUS);
     }
 
     public static Double mercurySquare() {
-        return sphereSquare(2_439.7);
+        return sphereSquare(MERCURY_RADIUS);
     }
 
     public static Double jupiterSquare() {
-        return sphereSquare(71_492.0);
+        return sphereSquare(JUPITER_RADIUS);
     }
 
     public static Double earthVsMercury() {
