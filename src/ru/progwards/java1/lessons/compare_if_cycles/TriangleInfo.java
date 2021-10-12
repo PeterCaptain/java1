@@ -14,10 +14,4 @@ public class TriangleInfo {
         return  ((a == b && a != c) || (b == c && b != a) || (a == c && c != b));
     }
 
-    public static void main(String[] args) {
-        System.out.println(isTriangle(5, 2, 6));
-        System.out.println(isRightTriangle(4, 3, 5));
-        System.out.println(isIsoscelesTriangle(3, 3, 1));
-    }
-
 }
