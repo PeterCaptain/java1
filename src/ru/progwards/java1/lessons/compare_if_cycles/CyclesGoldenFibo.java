@@ -1,12 +1,24 @@
 package ru.progwards.java1.lessons.compare_if_cycles;
 
 
-
 public class CyclesGoldenFibo {
 
     public static boolean containsDigit(int number, int digit) {
-        return number == digit;
+        String str1 = Integer.toString(number);
+        String str2 = Integer.toString(digit);
+        boolean isResult = false;
+
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) == str2.charAt(0)) {
+                System.out.println("Число " + number + " содержит цифру - " + str2.charAt(0));
+                isResult = true;
+            }
+        }
+        if (!isResult)
+            System.out.println("Число " + number + " не содержит цифру - " + str2.charAt(0));
+        return isResult;
     }
+
 
     public static int fiboNumber(int n) {
         int num1 = 0;
@@ -31,30 +43,35 @@ public class CyclesGoldenFibo {
         double base;
         double edge;
 
-            edge = (double) a == b ? a : c;  // находим ребро треугольника
+        edge = (double) a == b ? a : c;  // находим ребро треугольника
 
-            if (edge != a && edge != b)    // находим основание треугольника
-                    base = b;
-                 else
-                    base = c;
+        if (a == b) {   // находим основание треугольника
+            base = c;
+        }
+        else if (b == c) {
+            base = a;
+        }
+        else {
+            base = b;
+        }
 
-        return (Math.abs(edge / base)> level1 && Math.abs(edge / base) < level2);
+        return (Math.abs(edge / base) > level1 && Math.abs(edge / base) < level2);
     }
 
     public static void main(String[] args) {
 
         for (int i = 1; i <= 15; i++) {
-            System.out.print( fiboNumber(i) + ", ");
+            System.out.print(fiboNumber(i) + ", ");
         }
         System.out.println("\n");
 
-            for (int j = 1; fiboNumber(j) < 100; j++) {
-                for (int k = j + 1; fiboNumber(k) < 100; k++) {
+        for (int j = 1; fiboNumber(j) < 100; j++) {
+            for (int k = j + 1; fiboNumber(k) < 100; k++) {
 
-                    if (isGoldenTriangle(fiboNumber(k), fiboNumber(k), fiboNumber(j))) {
-                        System.out.println(fiboNumber(j) + ", " + fiboNumber(k));
-                    }
+                if (isGoldenTriangle(fiboNumber(k), fiboNumber(k), fiboNumber(j))) {
+                    System.out.println(fiboNumber(j) + ", " + fiboNumber(k));
                 }
             }
+        }
     }
 }

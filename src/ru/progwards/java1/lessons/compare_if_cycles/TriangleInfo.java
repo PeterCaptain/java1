@@ -11,7 +11,7 @@ public class TriangleInfo {
     }
 
     public static boolean isIsoscelesTriangle(int a, int b, int c) {
-        return  ((a == b && a != c) || (b == c && b != a) || (a == c && c != b));
+        return  ((a == b) || (b == c) || (a == c));
     }
 
 }
