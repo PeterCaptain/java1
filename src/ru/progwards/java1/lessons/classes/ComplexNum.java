@@ -9,44 +9,36 @@ public class ComplexNum {
         this.b = b;
     }
 
-    public ComplexNum newComplexNum(int a, int b) {
-        return new ComplexNum(a, b);
-    }
-
     @Override
     public String toString() {
         return a  + "+" + b + "i";
     }
 
-    public ComplexNum add(ComplexNum number1, ComplexNum number2) {
-       int a = number1.a;
-       int b = number1.b;
-       int c = number2.a;
-       int d = number2.b;
-       return new ComplexNum( a + c, b + d);
+    public ComplexNum add(ComplexNum num1, ComplexNum num2) {
+       return new ComplexNum(num1.a + num2.a, num1.b + num2.b);
     }
 
-    public ComplexNum sub(ComplexNum number1, ComplexNum number2) {
-        int a = number1.a;
-        int b = number1.b;
-        int c = number2.a;
-        int d = number2.b;
+    public ComplexNum sub(ComplexNum num1, ComplexNum num2) {
+        int a = num1.a;
+        int b = num1.b;
+        int c = num2.a;
+        int d = num2.b;
         return new ComplexNum(a - c, b - d);
     }
 
-    public ComplexNum mul(ComplexNum number1, ComplexNum number2) {
-        int a = number1.a;
-        int b = number1.b;
-        int c = number2.a;
-        int d = number2.b;
+    public ComplexNum mul(ComplexNum num1, ComplexNum num2) {
+        int a = num1.a;
+        int b = num1.b;
+        int c = num2.a;
+        int d = num2.b;
         return new ComplexNum(a * c - b * d, b * c + a * d);
     }
 
-    public ComplexNum div(ComplexNum number1, ComplexNum number2) {
-        int a = number1.a;
-        int b = number1.b;
-        int c = number2.a;
-        int d = number2.b;
+    public ComplexNum div(ComplexNum num1, ComplexNum num2) {
+        int a = num1.a;
+        int b = num1.b;
+        int c = num2.a;
+        int d = num2.b;
         return new ComplexNum((a * c + b * d) / (c * c + d * d), (b * c - a * d) / (c * c + d * d));
     }
 }
