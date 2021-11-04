@@ -1,12 +1,16 @@
 package ru.progwards.java1.lessons.classes;
 
 public class ComplexNum {
-     private int a;
-     private int b;
+     int a;
+     int b;
 
     public ComplexNum(int a, int b) {
         this.a = a;
         this.b = b;
+    }
+
+    public ComplexNum newComplexNum(int a, int b) {
+        return new ComplexNum(a, b);
     }
 
     @Override
@@ -15,10 +19,10 @@ public class ComplexNum {
     }
 
     public ComplexNum add(ComplexNum number1, ComplexNum number2) {
-        int a = number1.a;
-        int b = number1.b;
-        int c = number2.a;
-        int d = number2.b;
+       int a = number1.a;
+       int b = number1.b;
+       int c = number2.a;
+       int d = number2.b;
        return new ComplexNum( a + c, b + d);
     }
 
