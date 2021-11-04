@@ -55,6 +55,9 @@ public class CyclesGoldenFibo {
             base = b;
         }
 
+        //base = ((double) TriangleSimpleInfo.maxSide(a, b, c));
+       // edge = TriangleSimpleInfo.minSide(a, b, c);
+
         return (Math.abs(edge / base) > level1 && Math.abs(edge / base) < level2);
     }
 
@@ -73,5 +76,6 @@ public class CyclesGoldenFibo {
                 }
             }
         }
+        System.out.println(isGoldenTriangle(55, 55, 34));
     }
 }
