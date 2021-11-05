@@ -5,8 +5,8 @@ public class ComplexNum {
      int b;
 
     public ComplexNum(int a, int b) {
-        this.a = a;
-        this.b = b;
+        this.a = a; //действ. часть
+        this.b = b; // мним. часть
     }
 
     @Override
@@ -14,31 +14,36 @@ public class ComplexNum {
         return a  + "+" + b + "i";
     }
 
-    public ComplexNum add(ComplexNum num1, ComplexNum num2) {
-       return new ComplexNum(num1.a + num2.a, num1.b + num2.b);
+    public ComplexNum add(ComplexNum num) {
+        int c = num.a;
+        int d = num.b;
+        return new ComplexNum(a + c, b + d);
     }
 
-    public ComplexNum sub(ComplexNum num1, ComplexNum num2) {
-        int a = num1.a;
-        int b = num1.b;
-        int c = num2.a;
-        int d = num2.b;
+    public ComplexNum sub(ComplexNum num) {
+        int c = num.a;
+        int d = num.b;
         return new ComplexNum(a - c, b - d);
     }
 
-    public ComplexNum mul(ComplexNum num1, ComplexNum num2) {
-        int a = num1.a;
-        int b = num1.b;
-        int c = num2.a;
-        int d = num2.b;
+    public ComplexNum mul(ComplexNum num) {
+        int c = num.a;
+        int d = num.b;
         return new ComplexNum(a * c - b * d, b * c + a * d);
     }
 
-    public ComplexNum div(ComplexNum num1, ComplexNum num2) {
-        int a = num1.a;
-        int b = num1.b;
-        int c = num2.a;
-        int d = num2.b;
+    public ComplexNum div(ComplexNum num) {
+        int c = num.a;
+        int d = num.b;
         return new ComplexNum((a * c + b * d) / (c * c + d * d), (b * c - a * d) / (c * c + d * d));
+    }
+
+    public static void main(String[] args) {
+        ComplexNum x = new ComplexNum(1, 24);
+        ComplexNum y = new ComplexNum(3, 6);
+        System.out.println(x.add(y));
+        System.out.println(x.div(y));
+        System.out.println(x.sub(y));
+        System.out.println(x.mul(y));
     }
 }
