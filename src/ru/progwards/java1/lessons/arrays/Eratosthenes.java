@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
 public class Eratosthenes {
-    private boolean[] sieve;
+    private final boolean[] sieve;
 
     public Eratosthenes(int N) {
         sieve = new boolean[N];
@@ -16,25 +16,37 @@ public class Eratosthenes {
     private void sift() {
         for (int i = 2; i < sieve.length; i++) {
             if (!sieve[i]) {
+                continue;
             }
-            for (int j = 2; j < sieve.length; j++) {
-                if (j > i && j % i == 0) {
-                    sieve[j] = false;
+            for (int j = 2; j * i < sieve.length; j++) {
+                    sieve[j * i] = false;
                 }
             }
         }
 
-    }
-
     public boolean isSimple(int n) {
+        if (n >= sieve.length) {
+            System.out.print("Число " + n + " - вне области вычислений.\nВведите число в диапазоне  2..." + (n - 1) + ".  ");
+            return false;
+        }
+        else if (!sieve[n]) {
+            System.out.print("Число " + n + " - составное.  ");
+        }
+        else {
+            System.out.print("Число " + n + " - простое.  ");
+        }
         return sieve[n];
     }
 
+    //test
     public static void main(String[] args) {
-        Eratosthenes x = new Eratosthenes(120);
+        Eratosthenes x = new Eratosthenes(200);
         System.out.println(Arrays.toString(x.sieve));
         System.out.println();
-        System.out.println(x.isSimple(99));
-        System.out.println(x.isSimple(119));
+        System.out.println(x.isSimple(29));
+        System.out.println();
+        System.out.println(x.isSimple(30));
+        System.out.println();
+        System.out.println(x.isSimple(300));
     }
 }
