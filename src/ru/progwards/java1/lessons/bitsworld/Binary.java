@@ -13,18 +13,18 @@ public class Binary {
         byte check = num;
 
         if (check == 0) {
-            return check + ": 00000000";
+            return "00000000";
         } else {
             for (int i = 0; i < 8; i++) {
                 byte temp = (byte) (check >> i & 0b1);
                 result = temp + result;
             }
-            return check + ": " + result;
+            return  result;
         }
     }
 
     public static void main(String[] args) {
-        Binary binary = new Binary((byte) -127);
+        Binary binary = new Binary((byte) 0);
         System.out.println(binary);
     }
 
