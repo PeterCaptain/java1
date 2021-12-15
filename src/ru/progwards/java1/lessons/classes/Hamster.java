@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.classes;
 
-public class Hamster extends Animal{
+public class Hamster extends Animal {
 
     Hamster(double weight) {
         super(weight);

@@ -11,7 +11,6 @@ public class Binary {
     public String toString() {
         String result = "";
         byte check = num;
-
         if (check == 0) {
             return "00000000";
         } else {
@@ -19,12 +18,12 @@ public class Binary {
                 byte temp = (byte) (check >> i & 0b1);
                 result = temp + result;
             }
-            return  result;
+            return result;
         }
     }
 
     public static void main(String[] args) {
-        Binary binary = new Binary((byte) 0);
+        Binary binary = new Binary((byte) -100);
         System.out.println(binary);
     }
 
