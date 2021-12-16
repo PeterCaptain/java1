@@ -27,10 +27,6 @@ public class CalculateFibonacci {
         return lastFibo.fibo;
     }
 
-    public static class CacheInfo {
-        public int n; // Число, для которого расчитываем Фибоначи
-        public int fibo; // Результат расчета
-
         public static CacheInfo getLastFibo() {
             return lastFibo;
         }
@@ -38,6 +34,11 @@ public class CalculateFibonacci {
         public static void clearLastFibo() {
             lastFibo = null;
         }
+
+    public static class CacheInfo {
+        public int n; // Число, для которого расчитываем Фибоначи
+        public int fibo; // Результат расчета
+
     }
 
     // test
@@ -45,32 +46,32 @@ public class CalculateFibonacci {
     public static void main(String[] args) {
         System.out.println(fiboNumber(12));
         System.out.println("***");
-        System.out.println(CacheInfo.getLastFibo().n);
-        System.out.println(CacheInfo.getLastFibo().fibo);
+        System.out.println(getLastFibo().n);
+        System.out.println(getLastFibo().fibo);
         System.out.println("*****************");
         System.out.println();
 
         System.out.println(fiboNumber(15));
         System.out.println("***");
-        System.out.println(CacheInfo.getLastFibo().n);
-        System.out.println(CacheInfo.getLastFibo().fibo);
+        System.out.println(getLastFibo().n);
+        System.out.println(getLastFibo().fibo);
         System.out.println("*****************");
         System.out.println();
 
-        CacheInfo.clearLastFibo();
+        clearLastFibo();
 
         System.out.println(fiboNumber(10));
         System.out.println("***");
-        System.out.println(CacheInfo.getLastFibo().n);
-        System.out.println(CacheInfo.getLastFibo().fibo);
+        System.out.println(getLastFibo().n);
+        System.out.println(getLastFibo().fibo);
         System.out.println("*****************");
 
-        CacheInfo.clearLastFibo();
+        clearLastFibo();
 
         System.out.println(fiboNumber(8));
         System.out.println("***");
-        System.out.println(CacheInfo.getLastFibo().n);
-        System.out.println(CacheInfo.getLastFibo().fibo);
+        System.out.println(getLastFibo().n);
+        System.out.println(getLastFibo().fibo);
         System.out.println("*****************");
 
     }
