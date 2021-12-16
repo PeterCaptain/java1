@@ -13,7 +13,7 @@ public class Food implements CompareWeight {
 
     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeigt) {
-        Food food = (Food)smthHasWeigt;
+        Food food = (Food) smthHasWeigt;
         switch (Integer.compare(this.weight, food.getWeight())) {
             case 0:
                 return CompareResult.EQUAL;
@@ -24,7 +24,8 @@ public class Food implements CompareWeight {
         }
         return null;
     }
-//     test
+
+    //     test
     public static void main(String[] args) {
 
         Food a = new Food(5);
