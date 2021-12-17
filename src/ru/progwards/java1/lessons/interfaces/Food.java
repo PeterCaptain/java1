@@ -25,18 +25,18 @@ public class Food implements CompareWeight {
         return null;
     }
 
-    public static void sort(CompareWeight[] a) {
-        CompareWeight temp;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i].compareWeight(a[j]) == CompareResult.GREATER) {
-                    temp = a[j];
-                    a[j] = a[i];
-                    a[i] = temp;
-                }
-            }
-        }
-    }
+//    public static void sort(CompareWeight[] a) {
+//        CompareWeight temp;
+//        for (int i = 0; i < a.length; i++) {
+//            for (int j = i + 1; j < a.length; j++) {
+//                if (a[i].compareWeight(a[j]) == CompareResult.GREATER) {
+//                    temp = a[j];
+//                    a[j] = a[i];
+//                    a[i] = temp;
+//                }
+//            }
+//        }
+//    }
 
     // test
     public static void main(String[] args) {
@@ -55,9 +55,14 @@ public class Food implements CompareWeight {
             System.out.print(food.getWeight() + "; ");
         }
         System.out.println();
-        System.out.println("**************************");
+        System.out.println("************************");
 
-        Food.sort(foods);
+//        Food.sort(foods);
+//        for (var food : foods) {
+//            System.out.print(food.getWeight() + "; ");
+//        }
+        System.out.println("************************");
+        ArraySort.sort(foods);
         for (var food : foods) {
             System.out.print(food.getWeight() + "; ");
         }
