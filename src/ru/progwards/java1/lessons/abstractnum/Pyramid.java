@@ -19,9 +19,4 @@ public class Pyramid extends Figure3D {
     public String toString() {
         return "Фигура \"Пирамида\"\nоснованиe       - квадрат\nдлина стороны   - " + segment + "\nвысота пирамиды - " + segment;
     }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
 }
