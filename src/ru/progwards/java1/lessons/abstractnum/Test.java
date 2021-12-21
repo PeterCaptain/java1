@@ -9,7 +9,7 @@ public class Test {
 
     public static void main(String[] args) {
         Number number1 = new IntNumber(3);
-        Number number2 = new DoubleNumber(3.0);
+        Number number2 = new DoubleNumber(3);
         Cube cube1 = new Cube(number1);
         Cube cube2 = new Cube(number2);
 

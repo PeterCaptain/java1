@@ -7,11 +7,21 @@ public class Pyramid extends Figure3D {
 
     @Override
     public Number volume() {
-        return (segment.mul(segment.mul(segment))).div(segment);
+        Number divider1 = new IntNumber(3);
+        Number divider2 = new DoubleNumber(3);
+        if (segment.getClass() == IntNumber.class) {
+            return segment.mul(segment.mul(segment)).div(divider1);
+        }
+        return segment.mul(segment.mul(segment)).div(divider2);
     }
 
     @Override
     public String toString() {
         return "Фигура \"Пирамида\"\nоснованиe       - квадрат\nдлина стороны   - " + segment + "\nвысота пирамиды - " + segment;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
