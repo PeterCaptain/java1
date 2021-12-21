@@ -9,13 +9,13 @@ public class IntNumber extends Number {
 
     @Override
     public Number mul(Number num) {
-        IntNumber temp = (IntNumber)(num);
+        IntNumber temp = (IntNumber)num;
         return new IntNumber(this.num * temp.num);
     }
 
     @Override
     public Number div(Number num) {
-        IntNumber temp = (IntNumber) (num);
+        IntNumber temp = (IntNumber)num;
         return new IntNumber(this.num / temp.num);
     }
 
