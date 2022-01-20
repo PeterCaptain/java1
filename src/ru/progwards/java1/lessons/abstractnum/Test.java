@@ -8,7 +8,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        Number number1 = new IntNumber(3);
+        Number number1 = new IntNumber(694);
         Number number2 = new DoubleNumber(694);
         Cube cube1 = new Cube(number1);
         Cube cube2 = new Cube(number2);
