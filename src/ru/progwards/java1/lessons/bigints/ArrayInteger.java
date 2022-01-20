@@ -12,7 +12,7 @@ public class ArrayInteger {
         digits = new byte[n];
     }
 
-    private void fromInt(BigInteger value) {
+    public void fromInt(BigInteger value) {
         // вариант 1
  /*       if (value.compareTo(BigInteger.ZERO) < 0) {
             System.out.println("Число не должно быть отрицательным\n");
