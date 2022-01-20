@@ -57,7 +57,7 @@ public class ArrayInteger {
     }
 
 
-    private BigInteger toInt() {
+    public BigInteger toInt() {
         BigInteger newNumber = new BigInteger("0");
 
         for (int j = digits.length - 1; j >= 0; j--) {
@@ -69,7 +69,7 @@ public class ArrayInteger {
         return newNumber;
     }
 
-    private boolean add(ArrayInteger num) {
+    public boolean add(ArrayInteger num) {
 // определим кол-во значимых цифр во втором слагаемом
         int numLength = num.toInt().toString().length();
 // Определим условие сложения чисел. Если второе слагаемое сможет уложиться в массив первого слагаемого - можно
