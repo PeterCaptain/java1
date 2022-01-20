@@ -87,21 +87,21 @@ public class ArrayInteger {
                         digits[i + 1] = (byte) (digits[i + 1] + 1);
                     }
 // проверка возможности переноса десятка в следующий разряд для старшего (последнего значимого числа), если это
-// позволяет длина меньшего массива
+// позволяет длина массива первого слагаемого
                      else if (i == numLength - 1 && digits.length > numLength) {
                         digits[i] = (byte) (digits[i] % 10);
                         digits[i + 1] = (byte) (digits[i + 1] + 1);
                     }
                 }
             }
-// если условие longNum <= ArrayLengthMin не выполняется обнуляем экземпляр класса из которого был вызван метод add и
+// если условие numLength <= digits.length не выполняется обнуляем экземпляр класса из которого был вызван метод add и
 // возвращаем false
         } else {
             ArrayInteger zero = new ArrayInteger(this.n);
             this.digits = zero.digits;
             return false;
         }
-// при выполнении всех условий сложения выводим полученную сумму и возвращаем true
+// при выполнении всех условий сложения возвращаем true
         return true;
     }
 
