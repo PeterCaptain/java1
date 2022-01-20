@@ -4,8 +4,8 @@ import java.math.BigInteger;
 import java.util.Arrays;
 
 public class ArrayInteger {
-    private final int n;
-    private byte[] digits;
+    public final int n;
+    public byte[] digits;
 
     ArrayInteger(int n) {
         this.n = n;
