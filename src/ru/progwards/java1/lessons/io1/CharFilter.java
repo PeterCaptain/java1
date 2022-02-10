@@ -8,19 +8,19 @@ public class CharFilter {
 
     public static void filterFile(String inFileName, String outFileName, String filter) throws IOException {
         FileReader fileReader = new FileReader(inFileName);
-        FileReader filterReader = new FileReader(filter);
         FileWriter fileWriter = new FileWriter(outFileName);
+        char[] stringFilter = filter.toCharArray();
         try {
             for (int ch; (ch = fileReader.read()) >= 0; ) {
-                for (int fil; (fil = filterReader.read()) >= 0; ) {
-                    if (ch != fil) {
+                for (char c : stringFilter) {
+                    if (ch != c) {
                         fileWriter.write(ch);
                     }
                 }
             }
         } finally {
             fileReader.close();
-            filterReader.close();
+
             fileWriter.close();
         }
     }
