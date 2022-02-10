@@ -13,14 +13,13 @@ public class CharFilter {
         try {
             for (int ch; (ch = fileReader.read()) >= 0; ) {
                 for (char c : stringFilter) {
-                    if (ch != c) {
+                    if (ch != c - '0') {
                         fileWriter.write(ch);
                     }
                 }
             }
         } finally {
             fileReader.close();
-
             fileWriter.close();
         }
     }
