@@ -13,7 +13,7 @@ public class CharFilter {
 
         try {
             Scanner scanner = new Scanner(fileReader);
-            String result = "";
+            StringBuilder result = new StringBuilder();
             while (scanner.hasNextLine()) {
                 String fileText = scanner.nextLine();
                 for (int i = 0; i < fileText.length(); i++) {
@@ -21,12 +21,13 @@ public class CharFilter {
                     for (int j = 0; j < filter.length(); j++) {
                         if (fileText.charAt(i) == filter.charAt(j)) {
                             temp = "";
+                            break;
                         }
                     }
-                    result += temp;
+                    result.append(temp);
                 }
             }
-            fileWriter.write(result);
+            fileWriter.write(result.toString());
             scanner.close();
         } catch (IOException e) {
            throw new IOException("Файл не найден");
