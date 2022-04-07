@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Censor {
 
-    public static class CensorException extends IOException {
+    public static class CensorException extends Exception {
         private final String filename;
 
         public CensorException(String filename) {
@@ -54,7 +54,7 @@ public class Censor {
             writer.close();
             file.close();
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new CensorException(inoutFileName);
         }
     }
@@ -64,7 +64,7 @@ public class Censor {
     }
 
     // test
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         String[] obscene = {"Java", "Oracle", "Sun", "Microsystems"};
         String pathName = "C:\\Users\\petr\\HomeWork\\src\\ru\\progwards\\java1\\lessons\\io2\\text.txt";
         String pathName3 = "simple22.txt";
