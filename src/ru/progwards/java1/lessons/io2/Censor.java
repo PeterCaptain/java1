@@ -45,7 +45,7 @@ public class Censor {
                     temp.replace(start, end, replaceToStar(word)); // произвожу замену совпадения в строке
                 }
 
-                result.append(temp).append("\n").trimToSize(); // записываю полученный результат в строку result
+                result.append(temp).trimToSize(); // записываю полученный результат в строку result
                 temp.delete(0, temp.length());    // обнуляю временную строку
             }
 
