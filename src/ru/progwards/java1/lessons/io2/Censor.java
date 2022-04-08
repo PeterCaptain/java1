@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Censor {
-
     public static class CensorException extends Exception {
         private final String filename;
 
@@ -12,7 +11,6 @@ public class Censor {
             super();
             this.filename = filename;
         }
-
         @Override
         public String toString() {
             return filename + ":" + this.getMessage();

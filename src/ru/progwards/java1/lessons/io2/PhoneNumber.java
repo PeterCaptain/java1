@@ -1,14 +1,11 @@
 package ru.progwards.java1.lessons.io2;
 
-
-
-
 public class PhoneNumber {
 
     public static String format(String phone) throws RuntimeException {
 
         if (phone == null || phone.isEmpty()) {
-            throw new NullPointerException(phone + ": Номер не введён /No number entered");      // Бросаю исключение, если входной параметр NULL или пустой
+            throw new NullPointerException(phone + ": Номер не введён /String is empty");      // Бросаю исключение, если входной параметр NULL или пустой
 
         } else {
         StringBuilder phoneNumber = new StringBuilder();
