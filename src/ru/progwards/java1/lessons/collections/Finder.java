@@ -6,6 +6,7 @@ public class Finder {
 
     public static Collection<Integer> findMinSumPair(Collection<Integer> numbers) {
         List<Integer> arrayList = (ArrayList<Integer>) (numbers);
+        List<Integer> result = new ArrayList<>();
         int sumIndex = 0;
         int sum_min = arrayList.get(0) + arrayList.get(1);
 
@@ -14,10 +15,10 @@ public class Finder {
             sum_min = Math.min(sum_min, sum_2);
             sumIndex = (sum_min < sum_2) ? sumIndex : i;
         }
-        arrayList.clear();
-        arrayList.add(sumIndex);
-        arrayList.add(sumIndex + 1);
-        return arrayList;
+      //  arrayList.clear();
+        result.add(sumIndex);
+        result.add(sumIndex + 1);
+        return result;
     }
 
     public static Collection<Integer> findLocalMax(Collection<Integer> numbers) {
@@ -43,10 +44,7 @@ public class Finder {
         }
         return true;
     }
-/*
-Метод определяет максимальное кол-во повторяющихся подряд элементов коллекции.
-При этом,
- */
+
     public static String findSimilar(Collection<String> names) {
         List<String> list = (ArrayList<String>) names;
         int indexStart = 0;
@@ -77,16 +75,16 @@ public class Finder {
 
     public static void main(String[] args) {
         Collection<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
         list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
-        list.add(7);
         list.add(8);
-        list.add(9);
+        list.add(4);
+        list.add(0);
+        list.add(5);
+        list.add(1);
         list.add(10);
+        list.add(7);
+        list.add(2);
+        list.add(6);
 
         Collection<Integer> list2 = new ArrayList<>();
         list2.add(10);
