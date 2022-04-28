@@ -15,7 +15,6 @@ public class Finder {
             sum_min = Math.min(sum_min, sum_2);
             sumIndex = (sum_min < sum_2) ? sumIndex : i;
         }
-      //  arrayList.clear();
         result.add(sumIndex);
         result.add(sumIndex + 1);
         return result;
