@@ -42,30 +42,28 @@ public class ProductAnalytics {
             Set<Product> tempList = new HashSet<>(shops.get(i).getProducts()); // список продуктов в каком-то магазине
             Set<Product> overlap = new HashSet<>(tempList);                    // копия tempList
             for (int j = i + 1; j < shops.size(); j++) {
-                overlap.retainAll(new HashSet<>(shops.get(j).getProducts()));              //определяю совпадающие эл-ты в итерации цикла
-                overlapSum.addAll(overlap);                                                // добавляю полученные совпадения в множество
-                if (overlap.size() > 0) {                                                  // если совпадения найдены, то обнуляю overlap и присваиваю копию tempList
-                    overlap.clear();
-                    overlap = new HashSet<>(tempList);
-                }
+                overlap.retainAll(new HashSet<>(shops.get(j).getProducts()));  //определяю совпадающие эл-ты в итерации цикла
+                overlapSum.addAll(overlap);                                    // добавляю полученные совпадения в множество
+                overlap.clear();
+                overlap = new HashSet<>(tempList);
             }
         }
-        existOnlyInOneSet.removeAll(overlapSum);
+        existOnlyInOneSet.removeAll(overlapSum);                              // получаю множество с товарами которые есть, только в одном магазине
         return existOnlyInOneSet;
     }
 
     public static void main(String[] args) {
 
-        Product soap = new Product("001");
-        Product washingPowder = new Product("002");
-        Product pasta = new Product("003");
-        Product shampoo = new Product("004");
-        Product shavingGel = new Product("005");
-        Product shavingFoam = new Product("006");
-        Product lotion = new Product("007");
-        Product razor = new Product("008");
-        Product brush = new Product("009");
-        Product scissors = new Product("010");
+        Product soap = new Product("art-1");
+        Product washingPowder = new Product("art-2");
+        Product pasta = new Product("art-3");
+        Product shampoo = new Product("art-4");
+        Product shavingGel = new Product("art-5");
+        Product shavingFoam = new Product("art-6");
+        Product lotion = new Product("art-7");
+        Product razor = new Product("art-8");
+        Product brush = new Product("art-9");
+        Product scissors = new Product("art-10");
 
         List<Product> products = new ArrayList<>();
         products.add(soap);
@@ -81,26 +79,19 @@ public class ProductAnalytics {
 
         List<Product> list1 = new ArrayList<>();
         list1.add(soap);
-        list1.add(lotion);
+        list1.add(washingPowder);
         list1.add(razor);
-        list1.add(shavingGel);
+        list1.add(brush);
 
         List<Product> list2 = new ArrayList<>();
-        list2.add(soap);
-        list2.add(scissors);
-        list2.add(razor);
-        list2.add(brush);
-        list2.add(shampoo);
-        list2.add(washingPowder);
+        list2.add(pasta);
+        list2.add(shavingGel);
 
         List<Product> list3 = new ArrayList<>();
         list3.add(soap);
-        list3.add(scissors);
-        list3.add(lotion);
-        list3.add(razor);
+        list3.add(shavingGel);
         list3.add(brush);
-        list3.add(shampoo);
-        list3.add(shavingFoam);
+        list3.add(razor);
 
         Shop shop1 = new Shop(list1);
         Shop shop2 = new Shop(list2);
