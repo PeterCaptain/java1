@@ -49,9 +49,9 @@ public class CollectionsSort {
             @Override
             public int compare(Method o1, Method o2) {
                 if(o1.time.compareTo(o2.time) == 0) {
-                    return o1.method.compareTo(o2.method);
+                    return o1.method.compareTo(o2.method); // сравнение по имени
                 }
-                return o1.time.compareTo(o2.time);
+                return o1.time.compareTo(o2.time);         // сравнение по времени
             }
         });
 
