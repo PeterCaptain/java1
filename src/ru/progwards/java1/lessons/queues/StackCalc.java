@@ -27,24 +27,26 @@ public class StackCalc {
     }
 
     public void div() {
-        push(1 / pop() * pop());
+        double num1 = pop();
+        double num2 = pop();
+        push(num2 / num1);
     }
 
     public static void main(String[] args) {
         StackCalc stackCalc =  new StackCalc();
-        stackCalc.stack.push(1d);
-        stackCalc.stack.push(2d);
-        stackCalc.stack.push(3d);
-        stackCalc.stack.push(4d);
+        stackCalc.stack.push(5d);
+        stackCalc.stack.push(7d);
+        stackCalc.stack.push(5d);
+        stackCalc.stack.push(7d);
         stackCalc.stack.push(5d);
 
-        System.out.println(stackCalc.stack);
-        stackCalc.add();
-        System.out.println(stackCalc.stack);
-        stackCalc.sub();
-        System.out.println(stackCalc.stack);
-        stackCalc.mul();
-        System.out.println(stackCalc.stack);
+//        System.out.println(stackCalc.stack);
+//        stackCalc.add();
+//        System.out.println(stackCalc.stack);
+//        stackCalc.sub();
+//        System.out.println(stackCalc.stack);
+//        stackCalc.mul();
+//        System.out.println(stackCalc.stack);
         stackCalc.div();
         System.out.println(stackCalc.stack);
     }
