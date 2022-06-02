@@ -29,7 +29,7 @@ public class StackCalc {
     public void div() {
         double num1 = pop();
         double num2 = pop();
-        push(num2 / num1);
+        push(num2 / num1); // сначала был такой вариант push(1 / pop() * pop);, но происходит потеря точности и робот ответ не пропускает
     }
 
     public static void main(String[] args) {
