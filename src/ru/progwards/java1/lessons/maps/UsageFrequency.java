@@ -31,15 +31,14 @@ public class UsageFrequency {
         return list;
     }
 
-    public Map<String, Integer> getLetters() {
+    public Map<Character, Integer> getLetters() {
         List<Character> listLettersAndDigits = prepareListLetters(textFile);
         HashSet<Character> setKeyOfLettersAndDigits = new HashSet<>(listLettersAndDigits); // создаю множество из listWordsAndDigits (определение ключей для map)
-        HashMap<String, Integer> mapLettersAndDigits = new HashMap<>();
+        Map<Character, Integer> mapLettersAndDigits = new HashMap<>();
 
         for (Character ch : setKeyOfLettersAndDigits) { // создаю key и value и заполняю mapLettersAndDigits
-            String key = String.valueOf(ch);
             int value = Collections.frequency(listLettersAndDigits, ch);
-            mapLettersAndDigits.put(key, value);
+            mapLettersAndDigits.put(ch, value);
         }
         return  mapLettersAndDigits;
     }
@@ -54,7 +53,7 @@ public class UsageFrequency {
     public Map<String, Integer> getWords() {
         List<String> listWords = prepareListWords(textFile);
         Set<String> setKeyOfWords =(new HashSet<>(listWords)); //получаю множество setKeyOfWords из listWords (это будущие ключи для map)
-        HashMap<String, Integer> mapWords = new HashMap<>();
+        Map<String, Integer> mapWords = new HashMap<>();
 
         for (String key : setKeyOfWords) {
             int value = Collections.frequency(listWords, key); // определяю кол-во повторов в тексте
