@@ -36,9 +36,9 @@ public class UsageFrequency {
         HashSet<Character> setKeyOfLettersAndDigits = new HashSet<>(listLettersAndDigits); // создаю множество из listWordsAndDigits (определение ключей для map)
         Map<Character, Integer> mapLettersAndDigits = new HashMap<>();
 
-        for (Character ch : setKeyOfLettersAndDigits) { // создаю key и value и заполняю mapLettersAndDigits
-            int value = Collections.frequency(listLettersAndDigits, ch);
-            mapLettersAndDigits.put(ch, value);
+        for (Character key : setKeyOfLettersAndDigits) { // создаю key и value и заполняю mapLettersAndDigits
+            int value = Collections.frequency(listLettersAndDigits, key);
+            mapLettersAndDigits.put(key, value);
         }
         return  mapLettersAndDigits;
     }
