@@ -65,9 +65,10 @@ public class UsageFrequency {
 // test
     public static void main(String[] args) {
         UsageFrequency test = new UsageFrequency();
-        test.processFile("src/ru/progwards/java1/lessons/maps/wiki.test.tokens");
+        test.processFile("src/ru/progwards/java1/lessons/maps/wiki.train.tokens");
         System.out.println(test.getWords());
         System.out.println(test.getLetters());
 
     }
 }
+
