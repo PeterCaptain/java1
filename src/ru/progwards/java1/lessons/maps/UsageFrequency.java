@@ -31,7 +31,7 @@ public class UsageFrequency {
         return list;
     }
 
-    public HashMap<String, Integer> getLetters() {
+    public Map<String, Integer> getLetters() {
         List<Character> listLettersAndDigits = prepareListLetters(textFile);
         HashSet<Character> setKeyOfLettersAndDigits = new HashSet<>(listLettersAndDigits); // создаю множество из listWordsAndDigits (определение ключей для map)
         HashMap<String, Integer> mapLettersAndDigits = new HashMap<>();
